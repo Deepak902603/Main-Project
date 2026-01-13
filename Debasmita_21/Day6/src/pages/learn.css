@@ -1,0 +1,45 @@
+.learn-container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.learn-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.learn-section {
+  background: #ffffff;
+  padding: 25px 30px;
+  margin-bottom: 30px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.learn-section:hover {
+  transform: translateY(-4px);
+}
+
+.learn-section h2 {
+  margin-bottom: 15px;
+  color: #4f46e5;
+}
+
+.learn-code {
+  background: #111827;
+  color: #e5e7eb;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  overflow-x: auto;
+}
+
+.learn-flow li {
+  margin-bottom: 12px;
+  font-size: 16px;
+}
