@@ -1,0 +1,46 @@
+.task-container {
+  padding: 60px 80px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.task-container h1 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.task-container section {
+  margin-bottom: 30px;
+}
+
+.task-container h2 {
+  color: #6366f1;
+  margin-bottom: 10px;
+}
+
+.task-container p,
+.task-container li {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.task-container ul {
+  padding-left: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 12px;
+}
+
+th {
+  background: #6366f1;
+  color: white;
+}
