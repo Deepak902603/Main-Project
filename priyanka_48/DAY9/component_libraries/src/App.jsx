@@ -20,28 +20,46 @@ export default function App() {
         Click Me
       </button>
 
+      {/* Show selected message */}
       {message && (
         <p className="text-gray-700 font-semibold">{message}</p>
       )}
 
-      {/* Dropdown – Headless UI v2 (NO STRIKE LINE) */}
+      {/* Dropdown */}
       <Menu>
         <MenuButton className="px-4 py-2 bg-blue-500 text-white rounded">
           Open Dropdown
         </MenuButton>
 
         <MenuItems className="mt-2 w-40 bg-white shadow rounded p-1">
+          
           <MenuItem>
-            <button className="w-full px-4 py-2 text-left rounded data-[active]:bg-blue-100">
+            <button
+              onClick={() => setMessage("Option 1 selected")}
+              className="w-full px-4 py-2 text-left rounded data-[active]:bg-blue-100"
+            >
               Option 1
             </button>
           </MenuItem>
 
           <MenuItem>
-            <button className="w-full px-4 py-2 text-left rounded data-[active]:bg-blue-100">
+            <button
+              onClick={() => setMessage("Option 2 selected")}
+              className="w-full px-4 py-2 text-left rounded data-[active]:bg-blue-100"
+            >
               Option 2
             </button>
           </MenuItem>
+
+          <MenuItem>
+            <button
+              onClick={() => setMessage("Option 3 selected")}
+              className="w-full px-4 py-2 text-left rounded data-[active]:bg-blue-100"
+            >
+              Option 3
+            </button>
+          </MenuItem>
+
         </MenuItems>
       </Menu>
 
