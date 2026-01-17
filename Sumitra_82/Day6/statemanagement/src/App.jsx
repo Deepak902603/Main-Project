@@ -1,76 +1,34 @@
-import React, { createContext, useContext, useState } from "react";
+import React from "react";
+import { useQuery } from "@tanstack/react-query";
 
-/* ===============================
-   1. Create Theme Context
-================================ */
-const ThemeContext = createContext();
+// API fetch function (server state)
+const fetchUsers = async () => {
+  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  return res.json();
+};
 
-/* ===============================
-   2. Theme Provider
-================================ */
-function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState("light");
+function App() {
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["users"],   // cache key
+    queryFn: fetchUsers,   // API function
+  });
 
-  const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
-  };
-
-  return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
-}
-
-/* ===============================
-   3. Navbar Component
-================================ */
-function Navbar() {
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  if (isLoading) return <h2>Loading...</h2>;
+  if (error) return <h2>Error loading data</h2>;
 
   return (
-    <div
-      style={{
-        padding: "10px",
-        backgroundColor: theme === "light" ? "#eee" : "#333",
-        color: theme === "light" ? "#000" : "#fff",
-      }}
-    >
-      <h3>Navbar</h3>
-      <button onClick={toggleTheme}>Toggle Theme</button>
+    <div>
+      <h1>Server State Example</h1>
+
+      {data.map((user) => (
+        <div key={user.id}>
+          <p>
+            <b>{user.name}</b> - {user.email}
+          </p>
+        </div>
+      ))}
     </div>
   );
 }
 
-/* ===============================
-   4. Content Component
-================================ */
-function Content() {
-  const { theme } = useContext(ThemeContext);
-
-  return (
-    <div
-      style={{
-        padding: "20px",
-        backgroundColor: theme === "light" ? "#fff" : "#111",
-        color: theme === "light" ? "#000" : "#fff",
-        minHeight: "150px",
-      }}
-    >
-      <h2>Content Area</h2>
-      <p>Current Theme: <b>{theme}</b></p>
-    </div>
-  );
-}
-
-/* ===============================
-   5. App Component
-================================ */
-export default function App() {
-  return (
-    <ThemeProvider>
-      <Navbar />
-      <Content />
-    </ThemeProvider>
-  );
-}
+export default App;

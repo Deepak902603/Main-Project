@@ -1,35 +1,61 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+import React from "react";
+import { QueryClient, QueryClientProvider, useQuery } from "@tanstack/react-query";
+
+/* -------------------------------
+   Create Query Client
+-------------------------------- */
+const queryClient = new QueryClient();
+
+/* -------------------------------
+   API function (Server Call)
+-------------------------------- */
+const fetchUsers = async () => {
+  const response = await fetch("https://jsonplaceholder.typicode.com/users");
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch users");
+  }
+
+  return response.json();
+};
+
+/* -------------------------------
+   Component using Server State
+-------------------------------- */
+function Users() {
+  const { data, isLoading, isError, error } = useQuery({
+    queryKey: ["users"],
+    queryFn: fetchUsers,
+  });
+
+  if (isLoading) return <h3>Loading users...</h3>;
+  if (isError) return <h3>Error: {error.message}</h3>;
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <h2>Users List</h2>
+      <ul>
+        {data.map((user) => (
+          <li key={user.id}>
+            {user.name} - {user.email}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
-export default App
+/* -------------------------------
+   Main App (Single File)
+-------------------------------- */
+export default function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <div style={{ padding: "20px" }}>
+        <h1>React Server State Example</h1>
+        <Users />
+      </div>
+    </QueryClientProvider>
+  );
+}
