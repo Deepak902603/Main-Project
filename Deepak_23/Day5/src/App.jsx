@@ -15,7 +15,7 @@ function App() {
   const [focusFilled, setFocusFilled] = useState(null);
   const [success, setSuccess] = useState(false);
 
-  /* ---------------- VALIDATION ---------------- */
+ 
   const formValidation = (field, value) => {
     switch (field) {
       case "firstName":
@@ -55,7 +55,7 @@ function App() {
     }
   };
 
-  /* ---------------- HANDLERS ---------------- */
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -99,7 +99,7 @@ function App() {
     }
   };
 
-  /* ---------------- PROGRESS ---------------- */
+
   const totalFields = Object.keys(formData).length;
   const filledFields = Object.values(formData).filter(
     (v) => v.trim?.() !== "" || v !== ""
@@ -212,7 +212,6 @@ function App() {
   );
 }
 
-/* --------- Reusable Input Component --------- */
 const Input = ({ label, name, formData, errors, handleChange, handleBlur }) => (
   <div className="space-y-2">
     <label className="text-gray-400 block text-left">{label}</label>
