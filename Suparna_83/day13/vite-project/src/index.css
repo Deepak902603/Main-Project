@@ -1,0 +1,62 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* PAGE */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #eef2f7;
+}
+
+/* TITLE */
+.title {
+  text-align: center;
+  margin-top: 40px;
+  color: #2c3e50;
+}
+
+/* TABLE CENTER */
+.table-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+/* TABLE */
+table {
+  border-collapse: collapse;
+  width: 90%;
+}
+
+/* COMMON BOX STYLE */
+.box {
+  padding: 25px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  border: 3px solid white;
+}
+
+/* DIFFERENT COLORS */
+.one {
+  background-color: #3498db;
+}
+
+.two {
+  background-color: #9b59b6;
+}
+
+.three {
+  background-color: #1abc9c;
+}
+
+.four {
+  background-color: #e67e22;
+}
+
+.five {
+  background-color: #e74c3c;
+}

@@ -1,0 +1,63 @@
+/* Full browser background */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #3b82f6; /* Blue background */
+  font-family: Arial, sans-serif;
+}
+
+/* Center the table on page */
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Table styling */
+.profile-table {
+  background-color: pink;
+  border-collapse: collapse;
+  width: 500px;
+  text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Table header & data cells */
+.profile-table th,
+.profile-table td {
+  border: 2px solid black;
+  padding: 12px;
+  color: green;
+  font-weight: bold;
+}
+
+/* Header background */
+.profile-table th {
+  background-color: #fbcfe8;
+}
+
+/* Counter number */
+.profile-table td p {
+  margin: 0;
+  font-size: 20px;
+  color: green;
+}
+
+/* Increase button */
+.profile-table button {
+  margin-top: 6px;
+  padding: 6px 12px;
+  background-color: #22c55e; /* green */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Button hover effect */
+.profile-table button:hover {
+  background-color: #16a34a;
+}

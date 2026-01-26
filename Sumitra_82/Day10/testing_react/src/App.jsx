@@ -2,46 +2,36 @@
 import { useState } from "react";
 
 /*
-===========================
- REACT TESTING (BASICS)
-===========================
-
-IMPORTANT RULE:
-❌ @testing-library/react ko App.jsx me import NAHI karte
-✅ Testing code alag *.test.jsx file me hota hai
-
-Neeche testing ka example COMMENT me diya hai
-taaki aap concept samajh sako – app crash na ho
+=================================
+ PERFECT CENTER COUNTER APP
+=================================
 */
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        fontFamily: "Arial",
-      }}
-    >
-      <h1>React Testing Basics</h1>
+    <div className="app-wrapper">
+      <div className="card">
+        <div className="icon">🚀</div>
 
-      <p data-testid="count-text">Count: {count}</p>
+        <h1>Counter App</h1>
 
-      <button
-        onClick={() => setCount(count + 1)}
-        style={{
-          padding: "10px 20px",
-          fontSize: "16px",
-          cursor: "pointer",
-        }}
-      >
-        Increment
-      </button>
+        <p>
+          Simple React example using <b>useState</b>
+        </p>
+
+        <div className="count">{count}</div>
+
+        <div className="buttons">
+          <button className="inc" onClick={() => setCount(count + 1)}>
+            ➕ Increase
+          </button>
+          <button className="reset" onClick={() => setCount(0)}>
+            🔄 Reset
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
@@ -49,28 +39,74 @@ function App() {
 export default App;
 
 /*
-===========================
-TESTING CODE (FOR LEARNING)
-===========================
-
-Ye code App.jsx me NAHI likhte.
-Ye sirf samajhne ke liye hai.
-
-File: App.test.jsx
-
-import { render, screen, fireEvent } from "@testing-library/react";
-import "@testing-library/jest-dom";
-import App from "./App";
-
-test("increments count on click", () => {
-  render(<App />);
-
-  const button = screen.getByText("Increment");
-  fireEvent.click(button);
-
-  expect(screen.getByTestId("count-text"))
-    .toHaveTextContent("Count: 1");
-});
-
-===========================
+=====================
+ GLOBAL STYLES
+=====================
 */
+
+const style = document.createElement("style");
+style.innerHTML = `
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  .app-wrapper {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    font-family: Arial, sans-serif;
+  }
+
+  .card {
+    background: white;
+    width: 100%;
+    max-width: 360px;
+    padding: 24px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  }
+
+  .icon {
+    font-size: 40px;
+    margin-bottom: 8px;
+  }
+
+  .count {
+    font-size: 42px;
+    font-weight: bold;
+    color: #4f46e5;
+    margin: 20px 0;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 12px;
+  }
+
+  button {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+  }
+
+  .inc {
+    background: #22c55e;
+  }
+
+  .reset {
+    background: #ef4444;
+  }
+`;
+document.head.appendChild(style);

@@ -1,0 +1,72 @@
+/* Page center alignment */
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* Login card */
+.login-form {
+  background: #fff;
+  padding: 25px;
+  width: 280px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.login-form h2 {
+  text-align: center;
+  color: #333;
+}
+
+/* Inputs */
+.login-form input {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.login-form input:focus {
+  border-color: #667eea;
+}
+
+/* Button */
+.login-form button {
+  padding: 10px;
+  background-color: #667eea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background-color: #5a67d8;
+}
+
+/* Welcome page */
+.welcome-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f7fafc;
+  text-align: center;
+}
+
+.welcome-container h1 {
+  color: #2d3748;
+}
+
+.welcome-container p {
+  color: #4a5568;
+}

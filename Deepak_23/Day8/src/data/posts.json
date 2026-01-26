@@ -1,0 +1,77 @@
+[
+  {
+    "id": 1,
+    "title": "Learning React Custom Hooks",
+    "body": "Custom hooks help in reusing stateful logic across multiple components, improving maintainability and readability of React applications.",
+    "author": "Deepak Ranjan Rath",
+    "category": "React",
+    "year": 2025
+  },
+  {
+    "id": 2,
+    "title": "Why Tailwind CSS is Awesome",
+    "body": "Tailwind CSS provides a utility-first approach that allows developers to build modern, responsive, and scalable user interfaces faster.",
+    "author": "Deepak Ranjan Rath",
+    "category": "UI/UX",
+    "year": 2025
+  },
+  {
+    "id": 3,
+    "title": "Understanding useFetch Hook",
+    "body": "The useFetch custom hook abstracts API calling logic and handles loading and error states efficiently.",
+    "author": "Deepak Ranjan Rath",
+    "category": "Custom Hooks",
+    "year": 2025
+  },
+  {
+    "id": 4,
+    "title": "My Educational Journey",
+    "body": "I am pursuing my Master of Computer Applications (MCA) from GIFT (Autonomous), Bhubaneswar, with a strong interest in web development and software engineering.",
+    "author": "Deepak Ranjan Rath",
+    "category": "Education",
+    "year": 2026
+  },
+  {
+    "id": 5,
+    "title": "My Schooling Background",
+    "body": "I completed my schooling in Odisha, where I developed a strong foundation in mathematics and computer science.",
+    "author": "Deepak Ranjan Rath",
+    "category": "Schooling",
+    "year": 2019
+  },
+  {
+    "id": 6,
+    "title": "Internship Experience at Samsung",
+    "body": "I completed an internship at Samsung Pvt. Ltd., where I gained hands-on experience in software development and problem-solving.",
+    "author": "Deepak Ranjan Rath",
+    "category": "Internship",
+    "year": 2024
+  },
+  {
+    "id": 7,
+    "title": "Machine Learning Project Experience",
+    "body": "I worked on multiple machine learning projects using Java, including Sentiment Analysis, Fake News Detection, and Smart Vertical Farming.",
+    "author": "Deepak Ranjan Rath",
+    "category": "Projects",
+    "year": 2024
+  },
+  {
+    "id": 8,
+    "title": "My Career Objective",
+    "body": "To secure a software developer role where I can apply my technical skills, learn continuously, and contribute to impactful real-world projects.",
+    "author": "Deepak Ranjan Rath",
+    "category": "Career",
+    "year": 2026
+  },
+  {
+  "id": 9,
+  "title": "A Poem for Ankita",
+  "person": "Ankita Jena",
+  "description": "She holds a very special place in my heart, and my feelings for her are deep, genuine, and full of respect.",
+  "poem": "Like a soft breeze on a quiet night,\nYour presence brings my heart to light.\nIn crowded days and silent hours,\nYou remain my calm, my unseen power.",
+  "emotion": "Love",
+  "year": 2025,
+  "author": "Deepak Ranjan Rath"
+}
+
+]
