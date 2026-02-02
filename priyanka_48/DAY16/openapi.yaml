@@ -1,0 +1,79 @@
+openapi: 3.0.0
+info:
+  title: Pizza Order System API
+  description: API contracts for Pizza Order System (Day 16)
+  version: 1.0.0
+
+paths:
+  /signup:
+    post:
+      summary: User signup
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        201:
+          description: Signup successful
+
+  /login:
+    post:
+      summary: User login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        200:
+          description: Login successful
+
+  /pizzas:
+    get:
+      summary: Get available pizzas
+      responses:
+        200:
+          description: List of pizzas
+
+  /orders:
+    post:
+      summary: Place pizza order
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pizzaId:
+                  type: number
+                size:
+                  type: string
+                quantity:
+                  type: number
+                address:
+                  type: string
+      responses:
+        201:
+          description: Order placed successfully
+
+    get:
+      summary: View user orders
+      responses:
+        200:
+          description: User order list
